@@ -8,7 +8,7 @@ const GITHUB_TOKEN = environment.gitHubToken;
 export const getIssueByNumber = async (
   issueNumber: string
 ): Promise<GitHubIssue> => {
-  await sleep(1500);
+  // await sleep(1500); //para el test tenemos que quitarlo
 
   try {
     // const resp = await fetch(`${BASE_URL}/issues/${issueNumber}/comments`, {
@@ -25,6 +25,6 @@ export const getIssueByNumber = async (
 
     return issue;
   } catch (error) {
-    throw "Can't load issue";
+    throw `Can't load issue ${issueNumber}`;
   }
 };
